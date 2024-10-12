@@ -125,7 +125,7 @@ class Decoder:
             if len(buffer) >= len(password):
                 if not self.useFilter or (pbuffer := self.customIndexOf(result, buffer)) == -1:
                     result.append(buffer)
-                elif self.useFilter and pbuffer != -1 and self.toLowercase(result[pbuffer]) == self.toLowercase(buffer):
+                elif self.useFilter and pbuffer != -1 and result[pbuffer].lower() == buffer.lower():
                     result[pbuffer] = buffer
         return result
     
